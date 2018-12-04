@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<button onclick="getList()">点击</button>
+>
+<script>
+  function getList() {
+    $.ajax({
+      url: '',
+      type: 'get',
+      headers: {},
+      data: {},
+      success: function (data) {
+        const blob = new Blob(data);
+        FileSaver.saveAs(blob, 'xxx.xlsx');
+      },
+      catch: function (data) {
+
+      }
+    })
+  }
+</script>
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+</style>
+</html>
